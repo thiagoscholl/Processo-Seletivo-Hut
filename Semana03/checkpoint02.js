@@ -5,21 +5,22 @@ op = readlineSync.question('Digite a operacao: ')
 numero1 = parseInt(readlineSync.question('Digite o primeiro numero: '))
 numero2 = parseInt(readlineSync.question('Digite o segundo numero: '))
 
-console.log(Calculadora(op, numero1, numero2))
+Calculadora(op, numero1, numero2)
 
 function Calculadora(string, n1, n2){
-    switch (string) {
-        case 'soma':
-            return n1+n2
-        case 'subtrai':
-            return n1-n2
-        case 'divide':
-            return n1/n2
-        case 'multiplica':
-            return n1*n2
-        default:
-            return('Operacao invalida. Digite:\n soma | subtrai | divide | multiplica')
-    }
+        const operacoesaceitas = {
+            soma: n1+n2,
+            subtrai: n1-n2,
+            divide: n1/n2,
+            multiplica: n1*n2,
+        }
+
+        if(operacoesaceitas[string] !== undefined ){
+            console.log(operacoesaceitas[string])
+        } else {
+            console.log("Operacao invalida. Digite:\n soma | subtrai | divide | multiplica\n")
+        }
+
 }
 
 // Exercicio 02
